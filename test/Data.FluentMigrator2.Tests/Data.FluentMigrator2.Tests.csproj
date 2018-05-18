@@ -1,25 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../Common.props" />
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Cobweb.Data.FluentMigrator.Tests</AssemblyName>
-    <RootNamespace>Cobweb.Data.FluentMigrator.Tests</RootNamespace>
-    <Description>Unit tests for Cobweb's FluentMigrator v2 utilities and classes. Cobweb is a base-class utility library for .NET</Description>
-    <Authors>Arana Software</Authors>
-    <Company>Arana Software</Company>
-    <Copyright>Copyright © 2013-2018</Copyright>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>net40;net45;netstandard2.0</TargetFrameworks>
+        <AssemblyName>Cobweb.Data.FluentMigrator.Tests</AssemblyName>
+        <RootNamespace>Cobweb.Data.FluentMigrator.Tests</RootNamespace>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\Data.FluentMigrator.Tests\CompileTests.cs" Link="CompileTests.cs" />
-  </ItemGroup>
+    <ItemGroup>
+        <Compile Include="..\Data.FluentMigrator.Tests\CompileTests.cs" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="FluentMigrator" Version="2.0.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="FluentMigrator" Version="[2,3)" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Data.FluentMigrator2\Data.FluentMigrator2.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Data.FluentMigrator2\Data.FluentMigrator2.csproj" />
+    </ItemGroup>
 
 </Project>
