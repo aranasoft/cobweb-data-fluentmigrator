@@ -1,4 +1,5 @@
-﻿using FluentMigrator;
+﻿using System.ComponentModel;
+using FluentMigrator;
 
 namespace Cobweb.Data.FluentMigrator.Tests {
     /// <summary>
@@ -121,6 +122,26 @@ namespace Cobweb.Data.FluentMigrator.Tests {
                 Create.Table("Sample")
                       .WithColumn("NewSyntax", col => col.AsInt32().NotNullable().WithDefaultValue(7))
                       .WithColumn("NewSyntax", col => col.AsBoolean().Nullable());
+            }
+
+            private void CreateIndexUsingOldOnAndNewOn() {
+                Create.Index("Sample").OnTable("Table")
+                      .OnColumn("NewSyntax")
+                      .Ascending()
+                      .OnColumn("NewSyntax", col => col.Descending());
+            }
+
+            private void CreateIndexUsingNewOnAndOldOn() {
+                Create.Index("Sample").OnTable("Table")
+                      .OnColumn("NewSyntax", col => col.Ascending())
+                      .OnColumn("NewSyntax")
+                      .Descending();
+            }
+
+            private void CreateIndexUsingNewOnAndNewOn() {
+                Create.Index("Sample").OnTable("Table")
+                      .OnColumn("NewSyntax", col => col.Ascending())
+                      .OnColumn("NewSyntax", col => col.Descending());
             }
 
             public override void Up() {}

@@ -1,5 +1,6 @@
 ﻿using System;
 using FluentMigrator.Builders.Alter.Table;
+using FluentMigrator.Builders.Create.Index;
 using FluentMigrator.Builders.Create.Table;
 
 namespace Cobweb.Data.FluentMigrator {
@@ -31,8 +32,9 @@ namespace Cobweb.Data.FluentMigrator {
             return columnOptions.Invoke(column);
         }
 
-        public static ICreateTableColumnOptionOrWithColumnSyntax
-            AsStringMax(this ICreateTableColumnAsTypeSyntax column) {
+        public static ICreateTableColumnOptionOrWithColumnSyntax AsStringMax(
+            this ICreateTableColumnAsTypeSyntax column
+        ) {
             return column.AsString(10000);
         }
 
@@ -40,6 +42,15 @@ namespace Cobweb.Data.FluentMigrator {
             this IAlterTableColumnAsTypeSyntax column
         ) {
             return column.AsString(10000);
+        }
+
+        public static ICreateIndexOnColumnSyntax OnColumn(
+            this ICreateIndexOnColumnSyntax columnSyntax,
+            string columnName,
+            Func<ICreateIndexColumnOptionsSyntax, ICreateIndexOnColumnSyntax> columnOptions
+        ) {
+            var column = columnSyntax.OnColumn(columnName);
+            return columnOptions.Invoke(column);
         }
     }
 }
