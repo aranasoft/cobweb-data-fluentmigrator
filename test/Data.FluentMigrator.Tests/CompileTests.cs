@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using FluentMigrator;
+﻿using FluentMigrator;
 
 namespace Cobweb.Data.FluentMigrator.Tests {
     /// <summary>
