@@ -14,6 +14,7 @@
         <RepositoryType>git</RepositoryType>
         <MinClientVersion>3.5</MinClientVersion>
         <PackageOutputPath>..\..\artifacts</PackageOutputPath>
+        <NoWarn>NU1701</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
