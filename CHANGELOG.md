@@ -1,5 +1,10 @@
-<a name=""></a>
-# [](https://github.com/aranasoft/cobweb-data-fluentmigrator/compare/v2.0.0...v) (2018-05-19)
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/aranasoft/cobweb-data-fluentmigrator/compare/v2.0.0...v3.0.0) (2018-05-19)
+
+
+### Features
+
+* **v3:** provide support for FluentMigrator v3 ([9e61f65](https://github.com/aranasoft/cobweb-data-fluentmigrator/commit/9e61f65))
 
 
 
